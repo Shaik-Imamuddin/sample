@@ -1,0 +1,47 @@
+If the violation occurs we have to perform rotation or recoloring
+
+cases when violation occurs
+
+
+null nodes in a red black tree always considered as black.
+
+case-1:
+    if the uncle is red
+
+    in this case we perform recoloring. 
+
+        recolor parent to black
+        recolor uncle to black
+        recolor grand parent to red.
+
+        If the grandparent becomes the root, recolor it to black.
+            Otherwise, check for further violations.
+
+case-2:
+    uncle is black and zig zag order
+
+    structure:
+        LR or RL
+
+        if LR perform left rotation.
+        if RL perform right rotation.
+
+
+        in this case will make a rotation
+
+        perform rotation on parent
+            this makes the tree linear like case(3).
+
+case-3:
+    uncle is black and Linear order 
+
+    structure:
+        LL or RR
+
+        if LL perform right rotation.
+        if RR perform left rotation.
+
+        in this case will make a rotation 
+
+        perform rotation on grandparent
+        perform recoloring.
